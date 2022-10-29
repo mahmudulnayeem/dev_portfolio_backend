@@ -62,9 +62,9 @@ module.exports.register = async (req, res) => {
       });
     } else {
       cloudinary.config({
-        cloud_name: process.env.CLOUD_NAME,
-        api_key: process.env.CLOUD_API_KEY,
-        api_secret: process.env.CLOUD_API_SECRET,
+        cloud_name: process.env.CLOUDNAME,
+        api_key: process.env.CLOUDAPIKEY,
+        api_secret: process.env.CLOUDAPISECRET,
         secure: true,
       });
       const result = await cloudinary.uploader.upload(files.image.filepath);
@@ -98,7 +98,7 @@ module.exports.register = async (req, res) => {
             },
             process.env.SECRET,
             {
-              expiresIn: process.env.TOKEN_EXP,
+              expiresIn: process.env.TOKENEXP,
             }
           );
           const option = {
@@ -166,13 +166,13 @@ module.exports.login = async (req, res) => {
             },
             process.env.SECRET,
             {
-              expiresIn: process.env.TOKEN_EXP,
+              expiresIn: process.env.TOKENEXP,
             }
           );
 
           const options = {
             expires: new Date(
-              Date.now() + process.env.COOKIE_EXP * 24 * 60 * 60 * 1000
+              Date.now() + process.env.COOKIEEXP * 24 * 60 * 60 * 1000
             ),
           };
 

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const databaseConnect = () =>{
-    mongoose.connect(process.env.ATLAS_URI,{
+    mongoose.connect(process.env.ATLASURI,{
         useNewUrlParser : true,
         useUnifiedTopology : true,
        

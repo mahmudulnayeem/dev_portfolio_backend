@@ -59,9 +59,9 @@ module.exports.addPortfolio = async (req, res) => {
       });
     } else {
       cloudinary.config({
-        cloud_name: process.env.CLOUD_NAME,
-        api_key: process.env.CLOUD_API_KEY,
-        api_secret: process.env.CLOUD_API_SECRET,
+        cloud_name: process.env.CLOUDNAME,
+        api_key: process.env.CLOUDAPIKEY,
+        api_secret: process.env.CLOUDAPISECRET,
         secure: true,
       });
       const result = await cloudinary.uploader.upload(files.image.filepath);
